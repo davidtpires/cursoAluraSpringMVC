@@ -1,3 +1,12 @@
+<style>
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: .3rem;
+}
+
+</style>
 <html>
 	<head>
 		<meta charset="UTF-8" />
@@ -5,6 +14,19 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="jumbotron mb-0">
+				<h1 class="display-4">Meus Pedidos</h1>
+			</div>
+			<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+				<div class="navbar-nav">
+					<a class="nav-link active" href="">Todos</a>
+					<a class="nav-link" href="">Aguardando</a>
+					<a class="nav-link" href="">Aprovado</a>
+					<a class="nav-link" href="">Entregue</a>
+				</div>
+				<a href="/pedido/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+			</nav>
+		
 			<div class="card" th:each="pedido : ${pedidos}">
 				<div class="card-header" th:text="${pedido.nomeProduto}">Nome do produto</div>
 				<div class="card-body">
